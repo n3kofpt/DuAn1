@@ -49,13 +49,19 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.getResult().isEmpty()) {
                                 // Nếu không có tài liệu nào được trả về, hiển thị thông báo đăng nhập thất bại
                                 Log.d(">>>>>LoginActivity", "No user found");
-                                Toast.makeText(getApplicationContext(), "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Tài Khoản Hoặc Mật Khẩu Sai", Toast.LENGTH_SHORT).show();
                             } else {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(">>>>>LoginActivity", "User found: " + document.getData());
                                     Toast.makeText(getApplicationContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(intent);
+                                    boolean fbPermission = document.getBoolean("fbPermission");
+                                    if (fbPermission) {
+                                        Toast.makeText(getApplicationContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Tài khoản của bạn không có quyền admin", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
                         } else {
