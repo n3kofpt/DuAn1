@@ -1,4 +1,4 @@
-package com.example.duan1;
+package com.example.duan1.Model;
 
 public class User {
     private String username;
