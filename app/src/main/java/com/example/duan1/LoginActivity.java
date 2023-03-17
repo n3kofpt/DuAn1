@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.duan1.AdminActivity.AdminMainActivity;
+import com.example.duan1.UserActivity.UserMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,6 +34,11 @@ public class LoginActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
     }
 
+    public void onClickLoginToRegister(View view){
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
     public void onClickLogin(View view) {
         String username = edtUserName.getText().toString();
         String password = edtPassword.getText().toString();
@@ -49,24 +56,25 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.getResult().isEmpty()) {
                                 // Nếu không có tài liệu nào được trả về, hiển thị thông báo đăng nhập thất bại
                                 Log.d(">>>>>LoginActivity", "No user found");
-                                Toast.makeText(getApplicationContext(), "Tài Khoản Hoặc Mật Khẩu Sai", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Username or password incorrect", Toast.LENGTH_SHORT).show();
                             } else {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(">>>>>LoginActivity", "User found: " + document.getData());
-                                    Toast.makeText(getApplicationContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
                                     boolean fbPermission = document.getBoolean("fbPermission");
                                     if (fbPermission) {
-                                        Toast.makeText(getApplicationContext(), "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        Toast.makeText(getApplicationContext(), "You are logged in as an administrator", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(LoginActivity.this, AdminMainActivity.class);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(getApplicationContext(), "Tài khoản của bạn không có quyền admin", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(LoginActivity.this, UserMainActivity.class);
+                                        startActivity(intent);
                                     }
                                 }
                             }
                         } else {
                             Log.d(">>>>>LoginActivity", "Error getting users: " + task.getException());
-                            Toast.makeText(getApplicationContext(), "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
