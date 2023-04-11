@@ -2,6 +2,7 @@ package com.example.duan1.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,5 +30,9 @@ public class PayFragment extends AppCompatActivity {
             }
         });
 
+    }
+    public void onclicPay(View view){
+        Intent intent = new Intent(PayFragment.this,InformationFragment.class);
+        startActivity(intent);
     }
 }

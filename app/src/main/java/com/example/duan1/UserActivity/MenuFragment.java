@@ -2,6 +2,7 @@ package com.example.duan1.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,5 +46,9 @@ public class MenuFragment extends AppCompatActivity {
         });
 
 
+    }
+    public void onclickMenu(View view){
+        Intent intent = new Intent(MenuFragment.this,PayFragment.class);
+        startActivity(intent);
     }
 }
