@@ -71,6 +71,7 @@ public class AdminMenuActivity extends AppCompatActivity {
         EditText priceEditText = view.findViewById(R.id.dialog_price);
         ImageView imageView = view.findViewById(R.id.dialog_image);
 
+        Log.d(">>>>>>>>>", "showAddMenuDialog: Thêm Món Ăn");
         builder.setPositiveButton("Thêm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -82,7 +83,7 @@ public class AdminMenuActivity extends AppCompatActivity {
 
                 FirebaseFirestore firestore = FirebaseFirestore.getInstance();
                 CollectionReference menuCollectionRef = firestore.collection("Menu");
-
+                Log.d(">>>>>>>", "onClick: Thêm Món Ăn");
                 menuCollectionRef.add(menu).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
