@@ -16,11 +16,11 @@ public class UserMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_main);
     }
     public void onlickMain(View view) {
-        Intent intent = new Intent(UserMainActivity.this, UserBookATable.class);
+        Intent intent = new Intent(UserMainActivity.this, UserTableBooking.class);
         startActivity(intent);
     }
     public void onlickMain1(View view) {
-        Intent intent = new Intent(UserMainActivity.this, lichhen.class);
+        Intent intent = new Intent(UserMainActivity.this, BookingCheckActivity.class);
         startActivity(intent);
     }
 

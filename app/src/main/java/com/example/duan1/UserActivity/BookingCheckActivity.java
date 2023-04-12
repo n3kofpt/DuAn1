@@ -1,15 +1,16 @@
-package com.example.duan1;
+package com.example.duan1.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.duan1.R;
+
+public class BookingCheckActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //hiiiiii
+        setContentView(R.layout.activity_booking_check);
     }
 }
