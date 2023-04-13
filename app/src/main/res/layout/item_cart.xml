@@ -5,7 +5,7 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/menu_item_image"
+        android:id="@+id/cart_item_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/ic_baseline_restaurant_menu_24" />
@@ -18,14 +18,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/menu_item_food_name"
+            android:id="@+id/cart_item_food_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên món ăn"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/menu_item_price"
+            android:id="@+id/cart_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giá tiền"
@@ -34,9 +34,9 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/menu_item_add_to_cart"
+        android:id="@+id/cart_item_right_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/ic_baseline_add_circle_24" />
+        android:src="@drawable/ic_baseline_cancel_24" />
 
 </LinearLayout>

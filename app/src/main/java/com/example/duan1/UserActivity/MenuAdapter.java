@@ -15,9 +15,6 @@ import java.util.List;
 public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
     private List<Menu> menuList;
 
-    public interface ItemClickListener {
-        void onClick(View view, int position,boolean isLongClick);
-    }
 
     public MenuAdapter(List<Menu> menuList) {
         this.menuList = menuList;
@@ -43,6 +40,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
         holder.imageView.setImageResource(menu.getImageResourceId());
         holder.foodNameTextView.setText(menu.getFoodName());
         holder.priceTextView.setText(menu.getPrice());
+
+        holder.addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

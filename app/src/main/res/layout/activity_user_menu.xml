@@ -12,11 +12,11 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnGioHang"
         tools:listitem="@layout/user_menu_item" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGioHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Giỏ Hàng"
