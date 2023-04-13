@@ -10,7 +10,7 @@ import com.example.duan1.AdminActivity.MenuAdapter;
 import com.example.duan1.R;
 
 public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-    public ImageView imageView;
+    public ImageView imageView, addToCart;
     public TextView foodNameTextView;
     public TextView priceTextView;
 
@@ -21,6 +21,7 @@ public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         imageView = itemView.findViewById(R.id.menu_item_image);
         foodNameTextView = itemView.findViewById(R.id.menu_item_food_name);
         priceTextView = itemView.findViewById(R.id.menu_item_price);
+        addToCart = itemView.findViewById(R.id.menu_item_add_to_cart);
     }
 
     //Tạo setter cho biến itemClickListenenr

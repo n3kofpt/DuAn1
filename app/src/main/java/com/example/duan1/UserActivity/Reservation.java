@@ -9,8 +9,13 @@ public class Reservation {
     private int tablePosition ;
     private int hour;
     private int minute;
+    private int date;
     private List<Menu> menus;
+    private boolean status;
 
+    public Reservation(boolean status) {
+        this.status = status;
+    }
 
     public Reservation(int tablePosition){
         this.tablePosition = tablePosition;
@@ -20,10 +25,13 @@ public class Reservation {
         this.menus = menus;
     }
 
-    public Reservation(String name, String phoneNumber, String address, int hour, int minute) {
+    public Reservation(String name, String phoneNumber, String address,int date, int hour, int minute) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.hour = hour;
+        this.minute = minute;
+        this.date = date;
     }
 
     public Reservation(String name, String phoneNumber, String address, int tablePosition , String time, List<Menu> menus) {
