@@ -9,7 +9,10 @@ public class Reservation {
     private int tablePosition ;
     private int hour;
     private int minute;
-    private int date;
+    private int day;
+    private int month;
+    private int year;
+
     private List<Menu> menus;
     private boolean status;
 
@@ -26,13 +29,15 @@ public class Reservation {
         this.menus = menus;
     }
 
-    public Reservation(String name, String phoneNumber, String address,int date, int hour, int minute) {
+    public Reservation(String name, String phoneNumber, String address,int day,int month,int year, int hour, int minute) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.hour = hour;
         this.minute = minute;
-        this.date = date;
+        this.day = day;
+        this.month = month;
+        this.year = year;
     }
 
     public Reservation(String name, String phoneNumber, String address, int tablePosition , String time, List<Menu> menus) {

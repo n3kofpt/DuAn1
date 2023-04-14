@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
 import com.example.duan1.R;
+
+import java.util.Date;
 
 public class UserInformationActivty extends AppCompatActivity {
         EditText etUserName, etPhoneNumber, etAddress;
@@ -25,9 +28,14 @@ public class UserInformationActivty extends AppCompatActivity {
             etAddress = findViewById(R.id.etAddress);
             btnNext = findViewById(R.id.btnNext);
             TimePicker timePicker = findViewById(R.id.timePicker);
-            int date = 0;
+
             int hour = timePicker.getCurrentHour(); // Lấy giá trị giờ
             int minute = timePicker.getCurrentMinute(); // Lấy giá trị phút
+
+            DatePicker datePicker = findViewById(R.id.datePicker);
+            int day = datePicker.getDayOfMonth();
+            int month = datePicker.getMonth();
+            int year = datePicker.getYear();
 
             btnNext.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -35,7 +43,7 @@ public class UserInformationActivty extends AppCompatActivity {
                     String name = etUserName.getText().toString();
                     String phoneNumber = etPhoneNumber.getText().toString();
                     String address = etAddress.getText().toString();
-                    Reservation reservation = new Reservation(name, phoneNumber, address, date, hour, minute);
+                    Reservation reservation = new Reservation(name, phoneNumber, address,day,month,year, hour, minute);
 
 
                     Intent intent = new Intent(UserInformationActivty.this, PaymentActivity.class);
