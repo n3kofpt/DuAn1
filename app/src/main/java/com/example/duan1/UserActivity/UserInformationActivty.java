@@ -85,7 +85,7 @@ public class UserInformationActivty extends AppCompatActivity {
                         month = i1;
                         day = i2;
                         }
-                    },2023,0,0);
+                    },2023,1,1);
                     datePickerDialog.show();
                 }
 
