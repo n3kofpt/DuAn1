@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminActivity.AdminDeskManagementActivity"
-    android:background="#C35858">
+    android:background="#F6A328">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
