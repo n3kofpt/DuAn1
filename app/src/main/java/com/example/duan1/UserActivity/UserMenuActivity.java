@@ -46,7 +46,6 @@ public class UserMenuActivity extends AppCompatActivity {
                 for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                     Menu menu = documentSnapshot.toObject(Menu.class);
                     menuItemList.add(menu);
-                    Reservation reservation = new Reservation(menuItemList);
                 }
                 menuAdapter.setData(menuItemList);
             }

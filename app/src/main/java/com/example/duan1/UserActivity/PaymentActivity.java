@@ -14,7 +14,6 @@ import com.example.duan1.adapter.PlaceYourOrderAdapter;
 
     public class PaymentActivity extends AppCompatActivity {
         boolean status;
-        Reservation reservation = new Reservation(status);
         TextView tvTotalItems, tvSubtotal, tvSubtotalAmount, tvDeliveryCharge, tvDeliveryChargeAmount, tvTotal, tvTotalAmount;
         TextView buttonPlaceYourOrder;
         RecyclerView cartItemsRecyclerView;
@@ -47,8 +46,22 @@ import com.example.duan1.adapter.PlaceYourOrderAdapter;
                 }
             });
 
+            // lấy dữ liệu từ Bundle
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+
+            int tablePosition = bundle.getInt("tablePosition");
+            String name = bundle.getString("name");
+            String phoneNumber = bundle.getString("phoneNumber");
+            String address = bundle.getString("address");
+            int hour = bundle.getInt("hour");
+            int minute = bundle.getInt("minute");
+            int day = bundle.getInt("day");
+            int month = bundle.getInt("month");
+            int year = bundle.getInt("year");
 
 
+            Reservation reservation = new Reservation(tablePosition, name, phoneNumber, address, status, hour, minute, day, month, year, menu);
         }
     private void calculateTotalAmount(Reservation reservation) {
         String subTotalAmount = 0+"";
@@ -69,15 +82,13 @@ import com.example.duan1.adapter.PlaceYourOrderAdapter;
     public void isChecked(boolean isCheck){
         if(isCheck = true){
             status = true;
-            status = reservation.isStatus();
-            reservation = new Reservation(status);
+
             Intent i = new Intent(PaymentActivity.this, OrderSucceessActivity.class);
             startActivity(i);
 
         }else {
             status = false;
-            status = reservation.isStatus();
-            reservation = new Reservation(status);
+
         }
     }
 }

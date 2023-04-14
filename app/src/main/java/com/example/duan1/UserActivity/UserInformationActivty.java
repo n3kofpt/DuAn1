@@ -27,8 +27,8 @@ public class UserInformationActivty extends AppCompatActivity {
             etPhoneNumber = findViewById(R.id.etPhoneNumber);
             etAddress = findViewById(R.id.etAddress);
             btnNext = findViewById(R.id.btnNext);
-            TimePicker timePicker = findViewById(R.id.timePicker);
 
+            TimePicker timePicker = findViewById(R.id.timePicker);
             int hour = timePicker.getCurrentHour(); // Lấy giá trị giờ
             int minute = timePicker.getCurrentMinute(); // Lấy giá trị phút
 
@@ -37,14 +37,26 @@ public class UserInformationActivty extends AppCompatActivity {
             int month = datePicker.getMonth();
             int year = datePicker.getYear();
 
+            Bundle bundle = new Bundle();
+            Intent truyendulieu = new Intent(this, PaymentActivity.class);
+
             btnNext.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String name = etUserName.getText().toString();
                     String phoneNumber = etPhoneNumber.getText().toString();
                     String address = etAddress.getText().toString();
-                    Reservation reservation = new Reservation(name, phoneNumber, address,day,month,year, hour, minute);
 
+                    // truyền dữ liệu
+                    bundle.putString("name", name);
+                    bundle.putString("phoneNumber", phoneNumber);
+                    bundle.putString("address", address);
+                    bundle.putInt("hour", hour);
+                    bundle.putInt("minute", minute);
+                    bundle.putInt("day", day);
+                    bundle.putInt("month", month);
+                    bundle.putInt("year", year);
+                    truyendulieu.putExtras(bundle);
 
                     Intent intent = new Intent(UserInformationActivty.this, PaymentActivity.class);
                     startActivity(intent);

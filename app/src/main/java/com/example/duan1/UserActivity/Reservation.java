@@ -6,48 +6,58 @@ public class Reservation {
     private String name;
     private String phoneNumber;
     private String address;
+    private List<Menu> menus;
+    private boolean status;
     private int tablePosition ;
+    //thời gian
     private int hour;
     private int minute;
     private int day;
     private int month;
     private int year;
 
-    private List<Menu> menus;
-    private boolean status;
 
-
-    public Reservation(boolean status) {
-        this.status = status;
-    }
-
-    public Reservation(int tablePosition){
-        this.tablePosition = tablePosition;
-    }
-
-    public Reservation(List<Menu> menus) {
-        this.menus = menus;
-    }
-
-    public Reservation(String name, String phoneNumber, String address,int day,int month,int year, int hour, int minute) {
+    public Reservation( int tablePosition, String name, String phoneNumber,
+                        String address, boolean status, int hour, int minute, int day, int month, int year,
+                        List<Menu> menus ) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.menus = menus;
+        this.status = status;
+        this.tablePosition = tablePosition;
         this.hour = hour;
         this.minute = minute;
-        this.day = day;
+        this.day =  day;
         this.month = month;
         this.year = year;
     }
 
-    public Reservation(String name, String phoneNumber, String address, int tablePosition , String time, List<Menu> menus) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.tablePosition = tablePosition ;
-        this.menus = menus;
+
+
+    public int getDay() {
+        return day;
     }
 
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 
     public boolean isStatus() {
         return status;
@@ -56,6 +66,7 @@ public class Reservation {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
 
     public int getTablePosition() {
         return tablePosition;
@@ -123,4 +134,3 @@ public class Reservation {
         this.menus = menus;
     }
 }
-

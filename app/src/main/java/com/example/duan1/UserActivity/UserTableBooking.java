@@ -18,42 +18,43 @@ public class UserTableBooking extends AppCompatActivity {
     }
     public void onImageClick(View view) {
         Intent intent = new Intent(UserTableBooking.this, UserMenuActivity.class);
-        Reservation reservation;
+        Intent truyendulieu = new Intent(this, PaymentActivity.class);
+        Bundle bundle = new Bundle();
         switch (view.getId()) {
             case R.id.ban1:
-                reservation = new Reservation(1);
+                bundle.putInt("tablePosition", 1);
                 startActivity(intent);
                 break;
             case R.id.ban2:
-                reservation = new Reservation(2);
+                bundle.putInt("tablePosition", 2);
                 startActivity(intent);
                 break;
             case R.id.ban3:
-                reservation = new Reservation(3);
+                bundle.putInt("tablePosition", 3);
                 startActivity(intent);
                 break;
             case R.id.ban4:
-                reservation = new Reservation(4);
+                bundle.putInt("tablePosition", 4);
                 startActivity(intent);
                 break;
             case R.id.ban5:
-                reservation = new Reservation(5);
+                bundle.putInt("tablePosition", 5);
                 startActivity(intent);
                 break;
             case R.id.ban6:
-                reservation = new Reservation(6);
+                bundle.putInt("tablePosition", 6);
                 startActivity(intent);
                 break;
             case R.id.ban7:
-                reservation = new Reservation(7);
+                bundle.putInt("tablePosition", 7);
                 startActivity(intent);
                 break;
             case R.id.ban8:
-                reservation = new Reservation(8);
+                bundle.putInt("tablePosition", 8);
                 startActivity(intent);
                 break;
             case R.id.ban9:
-                reservation = new Reservation(9);
+                bundle.putInt("tablePosition", 9);
                 startActivity(intent);
                 break;
         }
