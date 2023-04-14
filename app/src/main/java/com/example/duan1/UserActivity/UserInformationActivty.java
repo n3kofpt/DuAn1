@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -55,7 +56,7 @@ public class UserInformationActivty extends AppCompatActivity {
                     bundle.putInt("month", month);
                     bundle.putInt("year", year);
                     truyendulieu.putExtras(bundle);
-
+                    Log.d(">>>>>>>>>>>>>>", "onClick: " + hour + minute + day + month + year);
                     Intent intent = new Intent(UserInformationActivty.this, PaymentActivity.class);
                     startActivity(intent);
                 }
