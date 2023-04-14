@@ -2,6 +2,8 @@ package com.example.duan1.UserActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +14,14 @@ import android.widget.TimePicker;
 
 import com.example.duan1.R;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class UserInformationActivty extends AppCompatActivity {
         EditText etUserName, etPhoneNumber, etAddress;
-        Button btnNext;
+        Button btnNext,timePicker,datePicker;
+        int hour,minute,day,month,year;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +32,8 @@ public class UserInformationActivty extends AppCompatActivity {
             etPhoneNumber = findViewById(R.id.etPhoneNumber);
             etAddress = findViewById(R.id.etAddress);
             btnNext = findViewById(R.id.btnNext);
-
-            TimePicker timePicker = findViewById(R.id.timePicker);
-            int hour = timePicker.getCurrentHour(); // Lấy giá trị giờ
-            int minute = timePicker.getCurrentMinute(); // Lấy giá trị phút
-
-            DatePicker datePicker = findViewById(R.id.datePicker);
-            int day = datePicker.getDayOfMonth();
-            int month = datePicker.getMonth();
-            int year = datePicker.getYear();
+            timePicker = findViewById(R.id.timePicker);
+            datePicker = findViewById(R.id.datePicker);
 
             Bundle bundle = new Bundle();
             Intent truyendulieu = new Intent(this, PaymentActivity.class);
@@ -62,5 +60,38 @@ public class UserInformationActivty extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            timePicker.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(UserInformationActivty.this,
+                            new TimePickerDialog.OnTimeSetListener() {
+                                @Override
+                                public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                                     hour = i;
+                                    minute = i1;
+                                }
+                            },0,0,true);
+                    timePickerDialog.show();
+
+                }
+            });
+            datePicker.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(UserInformationActivty.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        year = i;
+                        month = i1;
+                        day = i2;
+                        }
+                    },2023,0,0);
+                    datePickerDialog.show();
+                }
+
+            });
         }
+
+
+
 }
