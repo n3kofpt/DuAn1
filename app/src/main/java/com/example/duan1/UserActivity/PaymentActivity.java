@@ -36,7 +36,7 @@ import com.example.duan1.adapter.PlaceYourOrderAdapter;
             buttonPlaceYourOrder = findViewById(R.id.buttonPlaceYourOrder);
 
             cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
-            initRecyclerView(reservation);
+//            initRecyclerView(reservation);
             buttonPlaceYourOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -61,7 +61,7 @@ import com.example.duan1.adapter.PlaceYourOrderAdapter;
             int year = bundle.getInt("year");
 
 
-            Reservation reservation = new Reservation(tablePosition, name, phoneNumber, address, status, hour, minute, day, month, year, menu);
+//            Reservation reservation = new Reservation(tablePosition, name, phoneNumber, address, status, hour, minute, day, month, year, menu);
         }
     private void calculateTotalAmount(Reservation reservation) {
         String subTotalAmount = 0+"";
