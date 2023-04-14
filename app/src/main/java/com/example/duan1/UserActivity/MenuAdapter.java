@@ -1,5 +1,6 @@
 package com.example.duan1.UserActivity;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.duan1.R;
 
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
@@ -33,6 +36,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
         return new MenuViewHolder(view); // Trả về menu item view
     }
 
+    private List<Menu> cartItemList = new ArrayList<>();
+    public List<Menu> getCartItemList() {
+        return cartItemList;
+    }
     @Override
     public void onBindViewHolder(MenuViewHolder holder, int position) {
         // gọi bên viewholder (lấy thành phần ánh xạ bên item) vào cái này để xử lý
@@ -44,7 +51,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                cartItemList.add(menu);
+                Intent intent = new Intent(v.getContext(), UserMenuActivity.class);
+                intent.putExtra("menuList", (Serializable) cartItemList);
             }
         });
     }

@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Enter Your Information"
+            android:background="#C88E3E"
             android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,10 +64,9 @@
 
         <DatePicker
             android:id="@+id/datePicker"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/btnNext"
-            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timePicker" />
         />
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:text="Tiếp"
             android:layout_marginTop="2dp"
-            app:layout_constraintTop_toBottomOf="@+id/timePicker"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,7 @@
         android:id="@+id/edtUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_person_24"
         android:hint="Username"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:drawableLeft="@drawable/baseline_https_24"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/edtUserName"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +56,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
+        android:backgroundTint="#C88E3E"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        android:background="#F4B52B"
         android:onClick="onClickLogin" />
 
     <TextView
@@ -75,7 +77,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#F4B52B"
+        android:backgroundTint="#C88E3E"
         android:text="Register"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"

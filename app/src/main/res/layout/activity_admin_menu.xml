@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Danh Sách Món Ăn"
+        android:background="#C88E3E"
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
