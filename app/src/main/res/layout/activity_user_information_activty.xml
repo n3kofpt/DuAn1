@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Enter Your Information"
+            android:background="#C88E3E"
             android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
