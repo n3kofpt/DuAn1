@@ -17,9 +17,9 @@ public class MenuViewHolder extends RecyclerView.ViewHolder {
     public MenuViewHolder(View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.menu_item_image);
-        foodNameTextView = itemView.findViewById(R.id.menu_item_food_name);
-        priceTextView = itemView.findViewById(R.id.menu_item_price);
-        addToCart = itemView.findViewById(R.id.menu_item_add_to_cart);
+        foodNameTextView = itemView.findViewById(R.id.user_menu_item_food_name);
+        priceTextView = itemView.findViewById(R.id.user_menu_item_price);
+        addToCart = itemView.findViewById(R.id.user_menu_item_add_to_cart);
     }
 }
 
