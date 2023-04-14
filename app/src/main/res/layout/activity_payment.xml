@@ -17,8 +17,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="10dp"
-            android:text="Total items in cart"
-            android:textSize="18sp"
+            android:text="Xác Nhận Thanh Toán"
+            android:textSize="22sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,MissingConstraints" />
 
@@ -26,10 +26,12 @@
             android:id="@+id/cartItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="76dp"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTotalItems"
-            android:nestedScrollingEnabled="false"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalItems" />
 
         <TextView android:id="@+id/tvSubtotal"
             android:layout_width="wrap_content"
@@ -97,11 +99,23 @@
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
+        <EditText
+            android:id="@+id/edt_PayMoney"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Tiền Cọc"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="61dp"
+            tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/buttonPlaceYourOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/button_bg"
             android:gravity="center"
             android:padding="10dp"
@@ -109,9 +123,12 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotal"
             tools:ignore="HardcodedText,TextContrastCheck" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
