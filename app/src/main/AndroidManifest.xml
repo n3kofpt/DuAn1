@@ -12,8 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1"
         tools:targetApi="31">
-
-        <!-- User -->
+        <activity
+            android:name=".UserActivity.PaymentActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserActivity.CartActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- User -->
         <activity
             android:name=".UserActivity.UserInformationActivty"
             android:exported="false">

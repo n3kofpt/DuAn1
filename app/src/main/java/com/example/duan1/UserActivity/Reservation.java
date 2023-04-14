@@ -13,6 +13,7 @@ public class Reservation {
     private List<Menu> menus;
     private boolean status;
 
+
     public Reservation(boolean status) {
         this.status = status;
     }
@@ -43,10 +44,13 @@ public class Reservation {
     }
 
 
+    public boolean isStatus() {
+        return status;
+    }
 
-
-
-
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 
     public int getTablePosition() {
         return tablePosition;
