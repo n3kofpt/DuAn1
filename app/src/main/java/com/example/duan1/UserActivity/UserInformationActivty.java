@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -27,8 +28,8 @@ public class UserInformationActivty extends AppCompatActivity {
             etPhoneNumber = findViewById(R.id.etPhoneNumber);
             etAddress = findViewById(R.id.etAddress);
             btnNext = findViewById(R.id.btnNext);
-
             TimePicker timePicker = findViewById(R.id.timePicker);
+
             int hour = timePicker.getCurrentHour(); // Lấy giá trị giờ
             int minute = timePicker.getCurrentMinute(); // Lấy giá trị phút
 
@@ -37,30 +38,29 @@ public class UserInformationActivty extends AppCompatActivity {
             int month = datePicker.getMonth();
             int year = datePicker.getYear();
 
-            Bundle bundle = new Bundle();
-            Intent truyendulieu = new Intent(this, PaymentActivity.class);
-
             btnNext.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String name = etUserName.getText().toString();
                     String phoneNumber = etPhoneNumber.getText().toString();
                     String address = etAddress.getText().toString();
+                    Reservation reservation = new Reservation(name, phoneNumber, address,day,month,year, hour, minute);
 
-                    // truyền dữ liệu
-                    bundle.putString("name", name);
-                    bundle.putString("phoneNumber", phoneNumber);
-                    bundle.putString("address", address);
-                    bundle.putInt("hour", hour);
-                    bundle.putInt("minute", minute);
-                    bundle.putInt("day", day);
-                    bundle.putInt("month", month);
-                    bundle.putInt("year", year);
-                    truyendulieu.putExtras(bundle);
-
-                    Intent intent = new Intent(UserInformationActivty.this, PaymentActivity.class);
-                    startActivity(intent);
+                    validateUserInf(reservation);
                 }
             });
         }
+        public void validateUserInf(Reservation reservation){
+            if(TextUtils.isEmpty(etUserName.getText().toString())){
+                etUserName.setError("Please Enter Your Name");
+                return;
+            }else if(TextUtils.isEmpty(etPhoneNumber.getText().toString())){
+                etPhoneNumber.setError("Please Enter Your Phone Number");
+                return;
+            }else if(TextUtils.isEmpty(etAddress.getText().toString())){
+                etAddress.setError("Please Enter Your Address");
+                return;
+            }
+            Intent intent = new Intent(UserInformationActivty.this, PaymentActivity.class);
+            startActivity(intent);        }
 }
