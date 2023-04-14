@@ -1,6 +1,8 @@
 package com.example.duan1.UserActivity;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
     private int imageResourceId;
     private String foodName;
     private String price;
